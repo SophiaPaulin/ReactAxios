@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { Button, Table } from 'semantic-ui-react'
+import { Button, Table } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -22,14 +22,14 @@ export default function Read() {
   }
 
   const onDelete = (id) => {
-    axios.delete(`https://63b7b2474f17e3a931da1e08.mockapi.io/fakeData/${id}`)
+    axios.delete(`https://jsonplaceholder.typicode.com/users${id}`)
     .then(() => {
       getData();
     })
   }
 
   const getData = () => {
-    axios.get(`https://63b7b2474f17e3a931da1e08.mockapi.io/fakeData`)
+    axios.get(`https://jsonplaceholder.typicode.com/users`)
       .then((getData) => {
         setAPIData(getData.data);
       })

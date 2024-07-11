@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Button, Checkbox, Form } from 'semantic-ui-react';
 import LoadingBar from 'react-top-loading-bar';
 import axios from 'axios';
 

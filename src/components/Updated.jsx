@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar'
 import axios from 'axios';
@@ -20,7 +20,7 @@ export default function Update() {
   }, []);
 
   const updateAPIData = () => {
-    axios.put(`https://63b7b2474f17e3a931da1e08.mockapi.io/fakeData/${id}`, {
+    axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, {
       firstName,
       lastName,
       checkbox
