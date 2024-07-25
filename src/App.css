@@ -1,49 +1,42 @@
-/* @import url('https://jsonplaceholder.typicode.com/users'); */
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #212121;
-  color: whitesmoke;
-  flex-direction: column;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.main-header {
-  font-family: 'Montserrat', sans-serif;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.create-form label {
-  color: whitesmoke !important;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px !important;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.content {
-  border: 1px solid;
-  padding: 46px;
-  border-radius: 10px;
-  box-shadow: 0+0+32px white;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-.ui.button {
-  margin-top: 18px;
+.card {
+  padding: 2em;
 }
 
-.ui.form input:not([type]),
-.ui.form input:not([type]):focus,
-.ui.checkbox label:before,
-.ui.checkbox label:hover::before,
-.ui.checkbox input:checked~label:after {
-  background: #ffffff17 !important;
-}
-
-.ui.table {
-  box-shadow: 0+0+32px #ffffff45;
-}
-
-.ui.checkbox input:checked~label:after,
-.ui.form input:not([type]) {
-  color: #fff !important;
+.read-the-docs {
+  color: #888;
 }

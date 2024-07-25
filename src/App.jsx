@@ -1,32 +1,31 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Products from './components/Products';
+import Navbar from './components/Navbar';
+import Edit from './components/Edit';
 import Create from './components/Create';
-import Read from './components/Read';
-import Update from './components/Updated';
-import './App.css';
+import Footer from './components/Footer';
 
-function App() {
+
+const App = () => {
+  const[id,setId]=useState(0)
   return (
-      <Router>
-        <div className="main">
-          <div className="content">
-            <h2 className="main-header">React Crud Operations</h2>
-            <div>
-              <Routes>
-                <Route exact path='/' Component={Create} />
-              </Routes>
-              <div style={{ marginTop: 20 }}>
-                <Routes>
-                  <Route exact path='/read' Component={Read} />
-                </Routes>
-              </div>
-              <Routes>
-                <Route path='/update' Component={Update} />
-              </Routes>
-            </div>
-          </div>
+    <div>
+      <BrowserRouter>
+        <div>
+          <Navbar />
         </div>
-      </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products setId={setId} />} />
+          <Route path="/edit/:id" element={<Edit id={id} />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      </BrowserRouter>
+    <Footer />
+    </div>
   );
-}
+};
 
 export default App;
